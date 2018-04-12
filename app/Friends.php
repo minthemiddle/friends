@@ -12,7 +12,7 @@ class Friends extends Model
 
     public function getAgeAttribute(){
     	$my_age = Carbon::instance($this->birthday);
-    	return $my_age->age;
+    	return $my_age->age+1;
     }
 
     public function getDayOfYearAttribute(){

@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Freunde</title>
-    {{-- <link rel="stylesheet" href="css/app.css" /> --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.min.css" />
-</head>
+    <link rel="stylesheet" href="css/app.css" />
+{{--     <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+ --}}</head>
 
-<body>
+<body class="p-8">
     <section class="hero is-info">
         <div class="hero-body">
             <div class="container">
@@ -21,7 +21,7 @@
 
     <section class="section">
         <div class="container">
-			<table class="table">
+			<table class="text-left w-full border-collapse">
 			    <thead>
 			        <tr>
 			            <th>Vorname</th>
@@ -44,7 +44,7 @@
 			    </tfoot>
 			    <tbody>
 			    	@foreach ($friends as $friend)
-			        
+
 			        <tr>
 			        	<td>{{ $friend->firstname }}</td>
 			        	<td>{{ $friend->lastname }}</td>
@@ -53,17 +53,12 @@
 			        	<td>{{ $friend->age }}</td>
 			        	<td>{{ $friend->time_delta_from_today }}</td>
 			        </tr>
-					
+
 					@endforeach
 			    </tbody>
 			</table>
 
         </div>
-    </section>
-    <section class="section">
-    	<pre>
-    		{{ $friends }}
-    	</pre>
     </section>
 </body>
 

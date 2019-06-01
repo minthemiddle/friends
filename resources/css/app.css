@@ -1,0 +1,17 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+th {
+    @apply py-4 px-6 bg-gray-200 font-bold uppercase text-sm text-gray-600 border-b border-gray-200;
+}
+
+td {
+    @apply py-4 px-6 border-b border-gray-200;
+}
+
+tr:nth-child(even) {
+    @apply bg-gray-100;
+}

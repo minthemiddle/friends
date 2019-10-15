@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Friends;
+use App\Friend;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -42,23 +42,23 @@ class FriendsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Friends  $friends
+     * @param  \App\Friend  $friends
      * @return \Illuminate\Http\Response
      */
-    public function show(Friends $friends)
+    public function show(Friend $friends)
     {
-        $friends = Friends::get()->sortBy('time_delta_from_today');
-        $age_avg = Friends::get()->avg('age');
+        $friends = Friend::get()->sortBy('time_delta_from_today');
+        $age_avg = Friend::get()->avg('age');
         return view('show', compact('friends', 'age_avg'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Friends  $friends
+     * @param  \App\Friend  $friends
      * @return \Illuminate\Http\Response
      */
-    public function edit(Friends $friends)
+    public function edit(Friend $friends)
     {
         //
     }
@@ -67,10 +67,10 @@ class FriendsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Friends  $friends
+     * @param  \App\Friend  $friends
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Friends $friends)
+    public function update(Request $request, Friend $friends)
     {
         //
     }
@@ -78,10 +78,10 @@ class FriendsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Friends  $friends
+     * @param  \App\Friend  $friends
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Friends $friends)
+    public function destroy(Friend $friends)
     {
         //
     }

@@ -9,56 +9,53 @@
 {{--     <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
  --}}</head>
 
-<body class="p-8">
-    <section class="hero is-info">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">Hallo Freunde</h1>
-                <h2 class="subtitle">Durchschnittsalter: {{ ceil($age_avg) }}</h2>
-            </div>
-        </div>
+<body class="p-8 antialiased">
+    <section class="p-6">
+        <h1 class="text-xl font-bold">Hallo Freunde</h1>
+                <h2 class="">Durchschnittsalter: <span class="font-bold">{{ ceil($age_avg) }}</span></h2>
     </section>
 
     <section class="section">
-        <div class="container">
-			<table class="text-left w-full border-collapse">
+        <table class="table-auto text-left overflow-x">
 			    <thead>
 			        <tr>
-			            <th>Vorname</th>
+			            <th>In …</th>
+                        <th>Vorname</th>
 			            <th>Nachname</th>
 			            <th>E-Mail</th>
 			            <th>Geburtstag</th>
-			            <th>Alter</th>
-			            <th>In … Tagen</th>
+			            <th>Wird</th>
+
 			        </tr>
 			    </thead>
 			    <tfoot>
 			        <tr>
-			            <th>Vorname</th>
+			            <th>In …</th>
+                        <th>Vorname</th>
 			            <th>Nachname</th>
 			            <th>E-Mail</th>
 			            <th>Geburtstag</th>
-			            <th>Alter</th>
-			            <th>In … Tagen</th>
+			            <th>Wird</th>
+
 			        </tr>
 			    </tfoot>
 			    <tbody>
 			    	@foreach ($friends as $friend)
 
 			        <tr>
-			        	<td>{{ $friend->firstname }}</td>
-			        	<td>{{ $friend->lastname }}</td>
-			        	<td><a href="mailto:{{ $friend->email }}">{{ $friend->email }}</a></td>
-			        	<td>{{ $friend->birthday->format('d.m.Y') }}</td>
-			        	<td>{{ $friend->age }}</td>
 			        	<td>{{ $friend->time_delta_from_today }}</td>
+                        <td>{{ $friend->firstname }}</td>
+			        	<td>{{ $friend->lastname }}</td>
+			        	<td><a href="mailto:{{ $friend->email }}" class="underline">{{ $friend->email }}</a></td>
+			        	<td>{{ $friend->birthdate->format('d.m.Y') }}</td>
+			        	<td>{{ $friend->age }}</td>
+
 			        </tr>
 
 					@endforeach
 			    </tbody>
 			</table>
 
-        </div>
     </section>
 </body>
 
